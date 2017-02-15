@@ -9,7 +9,7 @@
 Another option would be to provide the secret to the run via "--env-file /usr/local/etc/hb-credentials.env". Then the configuration of the noflo runtime must be part of the CMD in the Dockerfile und not part of the RUN.
 
 ## Run
-    docker run -it --name nojs -p 3569:3569 sejnub/noflo-runtime-js /bin/bash
+    docker rm -f nojs; docker run -it --name nojs -p 3569:3569 sejnub/noflo-runtime-js /bin/bash
 
 
 ## Links
