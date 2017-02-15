@@ -12,7 +12,8 @@ RUN npm install noflo --save
     
 # Install a few components (there are many more)     
 RUN npm install noflo-filesystem --save && \
-    npm install noflo-core --save   
+    npm install noflo-core       --save && \  
+    npm install noflo-mqtt       --save   
 
 # Install the runtime
 RUN npm install noflo-nodejs --save
