@@ -2,4 +2,7 @@
 
 
 ## Build
-    cd ~/docker-noflo-runtime-js; docker build -t sejnub/erlide .
+    cd ~/docker-noflo-runtime-js; docker build -t sejnub/docker-noflo-runtime-js .
+
+## Run
+    docker run -it --name nojs sejnub/noflo-runtime-js /bin/bash
