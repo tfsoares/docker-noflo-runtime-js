@@ -21,6 +21,6 @@ RUN npm install noflo-nodejs --save
 RUN node node_modules/.bin/noflo-nodejs-init --user $HB_FLOWHUB_USERID --host localhost --port 3569 --label "Local NoFlo Test"
 
 # Start the runtime
-RUN node node_modules/.bin/noflo-nodejs --capture-output=true
+CMD node node_modules/.bin/noflo-nodejs --capture-output=true
 
 
