@@ -18,7 +18,7 @@ RUN npm install noflo-filesystem --save && \
 RUN npm install noflo-nodejs --save
 
 # Configure local runtime
-RUN node node_modules/.bin/noflo-nodejs-init --user $HB_FLOWHUB_USERID --host autodetect --port 3569 --label "Local NoFlo Test"
+RUN node node_modules/.bin/noflo-nodejs-init --user $HB_FLOWHUB_USERID --host $HB_NOFLO-RUNTIME-IP --port 3569 --label "Local NoFlo Test"
 
 # Start the runtime
 CMD node node_modules/.bin/noflo-nodejs --capture-output=true
