@@ -23,4 +23,4 @@ RUN node node_modules/.bin/noflo-nodejs-init --user $HB_FLOWHUB_USERID --host lo
 # Start the runtime
 CMD node node_modules/.bin/noflo-nodejs --capture-output=true
 
-
+EXPOSE 3569
