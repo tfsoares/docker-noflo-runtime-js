@@ -48,10 +48,14 @@ RUN node node_modules/.bin/noflo-nodejs-init --user $HB_FLOWHUB_USERID --host $H
 #   --register          Register the runtime with Flowhub  [boolean] [default: true]
 #   --0.7.2             V  [boolean]
 #   -h, --help          Show help  [boolean]
+
+
+# TODO: It seems that I have to set the host again in the next CMD. Why is this? 
+#       I did set it with "noflo-nodejs-init" so why set it again with "noflo-nodejs --host "?
+#       If I don't set it again here the runtime does register at app.flowhub.io but it is registered 
+#       with the local ip of the container 172.17,... and so the flowhub-app can't reach the runtime. 
+
 CMD node node_modules/.bin/noflo-nodejs --host $ENV_HOST --capture-output=true
 
-
-# TODO: The runtime does register at app.flowhub.io but it is registered 
-#       with the local ip of the container 172.17,... and so the flowhub-app can't reach the runtime. Why is this?
 
 EXPOSE 3569
