@@ -26,4 +26,7 @@ RUN node node_modules/.bin/noflo-nodejs-init --user $HB_FLOWHUB_USERID --host $H
 # Start the runtime
 CMD node node_modules/.bin/noflo-nodejs --capture-output=true
 
+# TODO: The runtime does register at app.flowhub.io but it is registered 
+#       with the local ip of the container 172.17,... and so the flowhub-app can't reach the runtime. Why is this?
+
 EXPOSE 3569
