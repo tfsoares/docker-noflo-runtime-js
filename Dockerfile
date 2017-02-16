@@ -14,6 +14,7 @@ RUN npm install noflo --save
 RUN npm install noflo-filesystem --save && \
     npm install noflo-core       --save && \  
     npm install noflo-amqp       --save && \  
+    npm install noflo-packets    --save && \  
     npm install noflo-mqtt       --save   
 
 # Install the runtime
