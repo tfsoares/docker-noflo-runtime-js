@@ -25,7 +25,7 @@ ARG HB_FLOWHUB_USERID
 ARG HB_NOFLO_RUNTIME_HOST
 ENV ENV_HOST=$HB_NOFLO_RUNTIME_HOST
 
-RUN node node_modules/.bin/noflo-nodejs-init --user $HB_FLOWHUB_USERID --host $HB_NOFLO_RUNTIME_HOST --port 3569 --label "noflojs runtime on raspi"
+RUN node node_modules/.bin/noflo-nodejs-init --user $HB_FLOWHUB_USERID --host $HB_NOFLO_RUNTIME_HOST --port 3569 --label "Raspi Runtime 2"
 
 # Start the runtime
 # Usage: node_modules/.bin/noflo-nodejs [options]
