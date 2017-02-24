@@ -1,6 +1,6 @@
 # docker-noflo-runtime-js (WIP)
-This is work in progress and not usable by others just now. But plan is to improve it until it's of use for others.
-Also there shall be a version for X86 in addition to the current ARM version.
+This is work in progress and not very helpful for others just now. But plan is to improve it until it's of use for other developers.
+Also there shall be a version for X86 in addition to the current ARM (Raspberry Pi) version.
 
 
 
