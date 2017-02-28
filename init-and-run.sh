@@ -35,9 +35,9 @@
 #   --0.7.2             V  [boolean]
 #   -h, --help          Show help  [boolean]
 
-node node_modules/.bin/noflo-nodejs-init --user $SEJNUB_FLOWHUB_USERID --host $SEJNUB_NOFLO_RUNTIME_HOST --secret $secret --port 3569 --label $label
+node node_modules/.bin/noflo-nodejs-init --user $SEJNUB_FLOWHUB_USERID --host $SEJNUB_NOFLO_RUNTIME_HOST --secret $SEJNUB_NOFLO_RUNTIME_SECRET --port 3569 --label $SEJNUB_NOFLO_RUNTIME_LABEL
 
-node node_modules/.bin/noflo-nodejs                                    --host $SEJNUB_NOFLO_RUNTIME_HOST --secret $secret --capture-output=true
+node node_modules/.bin/noflo-nodejs                                    --host $SEJNUB_NOFLO_RUNTIME_HOST --secret $SEJNUB_NOFLO_RUNTIME_SECRET --capture-output=true
 
 
 # TODO: 
