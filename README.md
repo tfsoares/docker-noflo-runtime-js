@@ -66,6 +66,14 @@ Depending on if you created the env-file you run one of the following commands
     
     eof
 
+or you can also use a mix like e.g.
+
+    docker rm -f nojs; docker run -d --env-file /usr/local/etc/sejnub-credentials.env -e "SEJNUB_NOFLO_RUNTIME_LABEL=<label>" --name nojs -p 3569:3569 sejnub/noflo-runtime-js:rpi-latest
+    
+    eof
+
+
+
 The specified port on the host $SEJNUB_NOFLO_RUNTIME_HOST must be accesible from the browser.
 
 
