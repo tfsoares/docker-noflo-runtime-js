@@ -21,11 +21,26 @@ RUN npm install noflo-filesystem --save && \
 RUN npm install noflo-nodejs --save
 
 # Configure local runtime
+# Usage: node_modules/.bin/noflo-nodejs-init [options]
+# 
+# Options:
+#   --user         Unique Identifier for the runtime owner.  [default: "fe5e8086-0299-4b9a-8166-ea62e75e694a"]
+#   --host         Hostname or IP for the runtime. Use "autodetect" or "autodetect(<iface>)" for dynamic detection.  [default: "home.bunjes.net"]
+#   --port         Port for the runtime.  [number] [default: 3569]
+#   --label        Human-readable label for the runtime.  [default: "Raspi Runtime 2"]
+#   --secret       Secret string to be used for the connection.  [default: ",i0xJfVE"]
+#   --id           Unique Identifier for the runtime instance.  [default: "7fc432e9-a77a-45fe-a2c4-adf8ad777d49"]
+#   --permissions  Permissions  [default: "protocol:component,protocol:runtime,protocol:graph,protocol:network,component:getsource,component:setsource"]
+#   --0.7.2        V  [boolean]
+#   -h, --help     Show help  [boolean]
+
 ARG HB_FLOWHUB_USERID
 ARG HB_NOFLO_RUNTIME_HOST
 ENV ENV_HOST=$HB_NOFLO_RUNTIME_HOST
 
 RUN node node_modules/.bin/noflo-nodejs-init --user $HB_FLOWHUB_USERID --host $HB_NOFLO_RUNTIME_HOST --port 3569 --label "Raspi Runtime 2"
+
+
 
 # Start the runtime
 # Usage: node_modules/.bin/noflo-nodejs [options]
@@ -59,6 +74,16 @@ RUN node node_modules/.bin/noflo-nodejs-init --user $HB_FLOWHUB_USERID --host $H
 #       use and I can't find a way to use it in a github synced project.
 
 CMD node node_modules/.bin/noflo-nodejs --host $ENV_HOST --capture-output=true
+
+RUN cp init-and-run.sh .
+RUN chmod ug+x init-and-run.sh 
+
+
+# node node_modules/.bin/noflo-nodejs-init --user $HB_FLOWHUB_USERID --host $HB_NOFLO_RUNTIME_HOST --port 3569 --label $label
+# node node_modules/.bin/noflo-nodejs                                --host $HB_NOFLO_RUNTIME_HOST --capture-output=false
+
+
+# CMD node node_modules/.bin/noflo-nodejs  --capture-output=true
 
 
 EXPOSE 3569
