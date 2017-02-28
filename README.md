@@ -43,7 +43,7 @@ Log into dockerhub and push the images with
 
 
 ## Run interactively
-    docker rm -f nojs; docker run -it --env-file /usr/local/etc/hb-credentials.env --name nojs -p 3569:3569 sejnub/noflo-runtime-js /bin/bash
+    docker rm -f nojs; docker run -it --env-file /usr/local/etc/hb-credentials.env -e "label=rpi-11:47" --name nojs -p 3569:3569 sejnub/noflo-runtime-js /bin/bash
     
     eof
 
