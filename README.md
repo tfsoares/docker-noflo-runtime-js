@@ -23,7 +23,7 @@ Totally free to use by everyone.
 ## Build
     
     cd ~; rm -rf docker-noflo-runtime-js; git clone https://github.com/sejnub/docker-noflo-runtime-js.git
-    cd ~/docker-noflo-runtime-js; docker build --no-cache=false -t sejnub/noflo-runtime-js .
+    cd ~/docker-noflo-runtime-js; docker build --no-cache=false -t sejnub/noflo-runtime-js:rpi-latest .
     
     eof
 
@@ -35,8 +35,7 @@ If you are not sejnub you have to retag the images to your username at dockerhub
 Log into dockerhub and push the images with
     
     docker login
-    docker push sejnub/fhem:rpi-latest
-    docker push sejnub/fhem:rpi-updated
+    docker push sejnub/noflo-runtime-js:rpi-latest
 
 
 ## Create env-file
@@ -51,14 +50,14 @@ You have to create an env-file `/usr/local/etc/sejnub-credentials.env` with the 
 
 After having created the env-file you can run the container with
 
-    docker rm -f nojs; docker run -it --env-file /usr/local/etc/sejnub-credentials.env -e "label=rpi-11:47" -e "secret-string" --name nojs -p 3569:3569 sejnub/noflo-runtime-js /bin/bash
+    docker rm -f nojs; docker run -it --env-file /usr/local/etc/sejnub-credentials.env -e "label=rpi-11:47" -e "secret-string" --name nojs -p 3569:3569 sejnub/noflo-runtime-js:rpi-latest /bin/bash
     
     eof
 
 
 ## Run for production
 
-    docker rm -f nojs; docker run -d --env-file /usr/local/etc/sejnub-credentials.env -e "label=rpi-11:47" -e "secret-string" --name nojs -p 3569:3569 sejnub/noflo-runtime-js 
+    docker rm -f nojs; docker run -d --env-file /usr/local/etc/sejnub-credentials.env -e "label=rpi-11:47" -e "secret-string" --name nojs -p 3569:3569 sejnub/noflo-runtime-js:rpi-latest 
     
     
     eof
