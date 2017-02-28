@@ -37,35 +37,38 @@ Log into dockerhub and push the images with
     docker push sejnub/noflo-runtime-js:rpi-latest
 
 
-## Create env-file
+## Create env-file (optional)
 You have to create an env-file `/usr/local/etc/sejnub-credentials.env` with the following content
 
     # noflo-runtime-js
     SEJNUB_FLOWHUB_USERID=<your-user-id-that-you-got-from-flowhub>
     SEJNUB_NOFLO_RUNTIME_HOST=<ip-or-hostname-which-can-be-used-to-access-the-runtime>
+    SEJNUB_NOFLO_RUNTIME_SECRET=<freely-choosable-secret-string>
+    SEJNUB_NOFLO_RUNTIME_LABEL=<freely-choosable-label>
 
 
 ## Run interactively
 
-After having created the env-file you can run the container with
+Depending on if you created the env-file you run one of the following commands
 
-    docker rm -f nojs; docker run -it --env-file /usr/local/etc/sejnub-credentials.env -e "label=rpi-11:47" -e "secret-string" --name nojs -p 3569:3569 sejnub/noflo-runtime-js:rpi-latest /bin/bash
+    docker rm -f nojs; docker run -it -e "SEJNUB_FLOWHUB_USERID=<user-id>" -e "SEJNUB_NOFLO_RUNTIME_HOST=<host>" -e "SEJNUB_NOFLO_RUNTIME_SECRET=<secret>" -e "SEJNUB_NOFLO_RUNTIME_LABEL=<label>" --name nojs -p 3569:3569 sejnub/noflo-runtime-js:rpi-latest /bin/bash
+    docker rm -f nojs; docker run -it --env-file /usr/local/etc/sejnub-credentials.env --name nojs -p 3569:3569 sejnub/noflo-runtime-js:rpi-latest /bin/bash
     
     eof
 
 
 ## Run for production
 
-    docker rm -f nojs; docker run -d --env-file /usr/local/etc/sejnub-credentials.env -e "label=rpi-11:47" -e "secret-string" --name nojs -p 3569:3569 sejnub/noflo-runtime-js:rpi-latest 
-    
+Depending on if you created the env-file you run one of the following commands
+
+    docker rm -f nojs; docker run -d -e "SEJNUB_FLOWHUB_USERID=<user-id>" -e "SEJNUB_NOFLO_RUNTIME_HOST=<host>" -e "SEJNUB_NOFLO_RUNTIME_SECRET=<secret>" -e "SEJNUB_NOFLO_RUNTIME_LABEL=<label>" --name nojs -p 3569:3569 sejnub/noflo-runtime-js:rpi-latest 
+    docker rm -f nojs; docker run -d --env-file /usr/local/etc/sejnub-credentials.env --name nojs -p 3569:3569 sejnub/noflo-runtime-js:rpi-latest
     
     eof
 
-The specified port on the host $SEJNUB_NOFLO_RUNTIME_HOST must be accesible from the internet.
+The specified port on the host $SEJNUB_NOFLO_RUNTIME_HOST must be accesible from the browser.
 
 
 ## Links
 https://docs.flowhub.io/getting-started-node/
-
-
 
