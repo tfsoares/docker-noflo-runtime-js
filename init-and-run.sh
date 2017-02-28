@@ -37,7 +37,7 @@ node node_modules/.bin/noflo-nodejs-init --user $HB_FLOWHUB_USERID --host $HB_NO
 #   --0.7.2             V  [boolean]
 #   -h, --help          Show help  [boolean]
 
-node node_modules/.bin/noflo-nodejs --host $HB_NOFLO_RUNTIME_HOST --capture-output=false
+node node_modules/.bin/noflo-nodejs --host $HB_NOFLO_RUNTIME_HOST --capture-output=true
 
 
 # TODO: It seems that I have to set the host again in the next CMD. Why is this? 
