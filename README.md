@@ -23,15 +23,12 @@ Totally free to use by everyone.
     docker rm $(docker ps -a -f status=exited -q)
     docker rmi $(docker images -f dangling=true -q)
     docker volume rm $(docker volume ls -f dangling=true -q)
-
-    eof
     
 
 ## Build
     
     cd ~; rm -rf docker-noflo-runtime-js; git clone https://github.com/sejnub/docker-noflo-runtime-js.git
     cd ~/docker-noflo-runtime-js; docker build --no-cache=false -t sejnub/noflo-runtime-js:rpi-latest .
-    echo ''; echo '########'; echo '# done #'; echo '########'; echo ''; 
 
 
 ## Push images to https://hub.docker.com
@@ -60,8 +57,6 @@ Depending on if you created the env-file you run one of the following commands
 
     docker rm -f nojs; docker run -it -e "SEJNUB_FLOWHUB_USERID=<user-id>" -e "SEJNUB_NOFLO_RUNTIME_HOST=<host>" -e "SEJNUB_NOFLO_RUNTIME_SECRET=<secret>" -e "SEJNUB_NOFLO_RUNTIME_LABEL=<label>" --name nojs -p 3569:3569 sejnub/noflo-runtime-js:rpi-latest /bin/bash
     docker rm -f nojs; docker run -it --env-file /usr/local/etc/sejnub-credentials.env --name nojs -p 3569:3569 sejnub/noflo-runtime-js:rpi-latest /bin/bash
-    
-    eof
 
 
 ## Run for production
@@ -76,8 +71,6 @@ Depending on if you created the env-file you run one of the following commands
 or you can also use a mix like e.g.
 
     docker rm -f nojs; docker run -d --env-file /usr/local/etc/sejnub-credentials.env -e "SEJNUB_NOFLO_RUNTIME_LABEL=<label>" --name nojs -p 3569:3569 sejnub/noflo-runtime-js:rpi-latest
-    
-    eof
 
 
 
