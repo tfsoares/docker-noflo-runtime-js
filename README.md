@@ -26,7 +26,7 @@ Totally free to use by everyone.
     echo $HB_NOFLO_RUNTIME_HOST
 
     cd ~; rm -rf docker-noflo-runtime-js; git clone https://github.com/sejnub/docker-noflo-runtime-js.git
-    cd ~/docker-noflo-runtime-js; docker build --build-arg HB_FLOWHUB_USERID=$HB_FLOWHUB_USERID --build-arg HB_NOFLO_RUNTIME_HOST=$HB_NOFLO_RUNTIME_HOST -t sejnub/noflo-runtime-js .
+    cd ~/docker-noflo-runtime-js; docker build --no-cache=false --build-arg HB_FLOWHUB_USERID=$HB_FLOWHUB_USERID --build-arg HB_NOFLO_RUNTIME_HOST=$HB_NOFLO_RUNTIME_HOST -t sejnub/noflo-runtime-js .
     
     eof
 
@@ -42,8 +42,14 @@ Log into dockerhub and push the images with
     docker push sejnub/fhem:rpi-updated
 
 
-## Run
+## Run interactively
     docker rm -f nojs; docker run -it --name nojs -p 3569:3569 sejnub/noflo-runtime-js /bin/bash
+    
+    eof
+
+
+## Run for production
+    docker rm -f nojs; docker run -d --name nojs -p 3569:3569 sejnub/noflo-runtime-js
     
     eof
 
