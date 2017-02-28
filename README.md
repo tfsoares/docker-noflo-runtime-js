@@ -39,14 +39,27 @@ Log into dockerhub and push the images with
     docker push sejnub/fhem:rpi-updated
 
 
+## Create env-file
+You have to create an env-file with the following content
+
+    # noflo-runtime-js
+    SEJNUB_FLOWHUB_USERID=<your-user-id-that-you-got-from-flowhub>
+    SEJNUB_NOFLO_RUNTIME_HOST=<ip-or-hostname-which-can-be-used-to-access-the-runtime>
+
+
 ## Run interactively
-    docker rm -f nojs; docker run -it --env-file /usr/local/etc/hb-credentials.env -e "label=rpi-11:47" -e "secret "secret-string" --name nojs -p 3569:3569 sejnub/noflo-runtime-js /bin/bash
+
+After having created the env-file you can run the container with
+
+    docker rm -f nojs; docker run -it --env-file /usr/local/etc/sejnub-credentials.env -e "label=rpi-11:47" -e "secret "secret-string" --name nojs -p 3569:3569 sejnub/noflo-runtime-js /bin/bash
     
     eof
 
 
 ## Run for production
-    docker rm -f nojs; docker run -d --env-file /usr/local/etc/hb-credentials.env --name nojs -p 3569:3569 sejnub/noflo-runtime-js
+
+    docker rm -f nojs; docker run -d --env-file /usr/local/etc/sejnub-credentials.env -e "label=rpi-11:47" -e "secret "secret-string" --name nojs -p 3569:3569 sejnub/noflo-runtime-js 
+    
     
     eof
 
