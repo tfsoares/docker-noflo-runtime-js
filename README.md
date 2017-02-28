@@ -7,7 +7,7 @@ WIP, doesn't work by now.
 Totally free to use by everyone.
 
 ## Tags
-  * **``rpi-latest``**  FHEM 5.8 for Raspberry Pi
+  * **``rpi-latest``**  Latest version for Raspberry Pi
 
 
 ## Build
