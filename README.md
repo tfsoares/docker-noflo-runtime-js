@@ -31,7 +31,7 @@ Totally free to use by everyone.
     
     cd ~; rm -rf docker-noflo-runtime-js; git clone https://github.com/sejnub/docker-noflo-runtime-js.git
     cd ~/docker-noflo-runtime-js; docker build --no-cache=false -t sejnub/noflo-runtime-js:rpi-latest .
-    echo '#########'; echo '# donee #'; echo '#########';
+    echo '########'; echo '# done #'; echo '########';
 
 
 ## Push images to https://hub.docker.com
