@@ -51,14 +51,14 @@ You have to create an env-file `/usr/local/etc/sejnub-credentials.env` with the 
 
 After having created the env-file you can run the container with
 
-    docker rm -f nojs; docker run -it --env-file /usr/local/etc/sejnub-credentials.env -e "label=rpi-11:47" -e "secret "secret-string" --name nojs -p 3569:3569 sejnub/noflo-runtime-js /bin/bash
+    docker rm -f nojs; docker run -it --env-file /usr/local/etc/sejnub-credentials.env -e "label=rpi-11:47" -e "secret-string" --name nojs -p 3569:3569 sejnub/noflo-runtime-js /bin/bash
     
     eof
 
 
 ## Run for production
 
-    docker rm -f nojs; docker run -d --env-file /usr/local/etc/sejnub-credentials.env -e "label=rpi-11:47" -e "secret "secret-string" --name nojs -p 3569:3569 sejnub/noflo-runtime-js 
+    docker rm -f nojs; docker run -d --env-file /usr/local/etc/sejnub-credentials.env -e "label=rpi-11:47" -e "secret-string" --name nojs -p 3569:3569 sejnub/noflo-runtime-js 
     
     
     eof
