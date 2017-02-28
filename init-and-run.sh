@@ -39,10 +39,3 @@ node node_modules/.bin/noflo-nodejs-init --user $SEJNUB_FLOWHUB_USERID --host $S
 
 node node_modules/.bin/noflo-nodejs                                    --host $SEJNUB_NOFLO_RUNTIME_HOST --secret $SEJNUB_NOFLO_RUNTIME_SECRET --capture-output=true
 
-
-# TODO: 
-# - It seems that I have to set the host again in the next CMD. Why is this? 
-#   I did set it with "noflo-nodejs-init --host" so why set it again with "noflo-nodejs --host "?
-#   If I don't set it again here the runtime does register at app.flowhub.io but it is registered 
-#   with the local ip of the container 172.17,... and so the flowhub-app can't reach the runtime. 
-#
