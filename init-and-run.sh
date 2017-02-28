@@ -12,7 +12,7 @@
 #   --0.7.2        V  [boolean]
 #   -h, --help     Show help  [boolean]
 
-node node_modules/.bin/noflo-nodejs-init --user $HB_FLOWHUB_USERID --host $HB_NOFLO_RUNTIME_HOST --port 3569 --label $label
+node node_modules/.bin/noflo-nodejs-init --user $SEJNUB_FLOWHUB_USERID --host $SEJNUB_NOFLO_RUNTIME_HOST --port 3569 --label $label
 
 
 # Start the runtime
@@ -37,7 +37,7 @@ node node_modules/.bin/noflo-nodejs-init --user $HB_FLOWHUB_USERID --host $HB_NO
 #   --0.7.2             V  [boolean]
 #   -h, --help          Show help  [boolean]
 
-node node_modules/.bin/noflo-nodejs --host $HB_NOFLO_RUNTIME_HOST --capture-output=true
+node node_modules/.bin/noflo-nodejs --host $SEJNUB_NOFLO_RUNTIME_HOST --capture-output=true
 
 
 # TODO: It seems that I have to set the host again in the next CMD. Why is this? 
