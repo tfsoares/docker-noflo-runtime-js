@@ -65,8 +65,6 @@ Depending on if you created the env-file you run one of the following commands
 
     docker rm -f nojs; docker run -d -e "SEJNUB_FLOWHUB_USERID=<user-id>" -e "SEJNUB_NOFLO_RUNTIME_HOST=<host>" -e "SEJNUB_NOFLO_RUNTIME_SECRET=<secret>" -e "SEJNUB_NOFLO_RUNTIME_LABEL=<label>" --name nojs -p 3569:3569 sejnub/noflo-runtime-js:rpi-latest 
     docker rm -f nojs; docker run -d --env-file /usr/local/etc/sejnub-credentials.env --name nojs -p 3569:3569 sejnub/noflo-runtime-js:rpi-latest
-    
-    eof
 
 or you can also use a mix like e.g.
 
