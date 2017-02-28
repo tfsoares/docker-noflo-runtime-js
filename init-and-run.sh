@@ -13,7 +13,6 @@
 #   -h, --help     Show help  [boolean]
 
 
-
 # Start the runtime
 # Usage: node_modules/.bin/noflo-nodejs [options]
 # 
