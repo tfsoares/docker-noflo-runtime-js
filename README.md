@@ -2,13 +2,23 @@
 This is work in progress and not very helpful for anyone just now. But plan is to improve it until it's of use for other developers.
 Also there shall be a version for X86 in addition to the current ARM (Raspberry Pi) version.
 
+
 ## Status and rights
 WIP, doesn't work by now. 
 Totally free to use by everyone.
 
+
 ## Tags
   * **``rpi-latest``**  Latest version for Raspberry Pi
 
+
+## Clean up before build
+    docker rm $(docker ps -a -f status=exited -q)
+    docker rmi $(docker images -f dangling=true -q)
+    docker volume rm $(docker volume ls -f dangling=true -q)
+
+    eof
+    
 
 ## Build
     
