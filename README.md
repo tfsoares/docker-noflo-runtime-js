@@ -50,7 +50,7 @@ Log into dockerhub and push the images with
     
     eof
 
-The specified port on the host $HB_NOFLO_RUNTIME_HOST must be accesible from the internet.
+The specified port on the host $SEJNUB_NOFLO_RUNTIME_HOST must be accesible from the internet.
 
 
 ## Links
