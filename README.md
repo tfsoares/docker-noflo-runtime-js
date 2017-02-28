@@ -40,7 +40,7 @@ Log into dockerhub and push the images with
 
 
 ## Create env-file
-You have to create an env-file with the following content
+You have to create an env-file `/usr/local/etc/sejnub-credentials.env` with the following content
 
     # noflo-runtime-js
     SEJNUB_FLOWHUB_USERID=<your-user-id-that-you-got-from-flowhub>
