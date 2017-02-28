@@ -1,5 +1,13 @@
 # docker-noflo-runtime-js
+This is the source to build a docker container for [noflo-nodejs](https://github.com/noflo/noflo-nodejs).
 There shall be an additional version for X86 in addition to the current ARM (Raspberry Pi) version.
+
+## Very short: How do I use it?
+Install docker engine on a Raspberry Pi and then run 
+    
+    docker rm -f nojs; docker run -d -e "SEJNUB_FLOWHUB_USERID=<user-id>" -e "SEJNUB_NOFLO_RUNTIME_HOST=<host>" -e "SEJNUB_NOFLO_RUNTIME_SECRET=<secret>" -e "SEJNUB_NOFLO_RUNTIME_LABEL=<label>" --name nojs -p 3569:3569 sejnub/noflo-runtime-js:rpi-latest 
+    
+and now the longer version:
 
 
 ## Status and rights
