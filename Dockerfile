@@ -75,7 +75,7 @@ RUN node node_modules/.bin/noflo-nodejs-init --user $HB_FLOWHUB_USERID --host $H
 
 CMD node node_modules/.bin/noflo-nodejs --host $ENV_HOST --capture-output=true
 
-RUN cp init-and-run.sh .
+COPY init-and-run.sh .
 RUN chmod ug+x init-and-run.sh 
 
 
