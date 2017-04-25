@@ -1,4 +1,4 @@
-FROM hypriot/rpi-node:latest
+FROM mhart/alpine-node:6
 
 # https://docs.flowhub.io/getting-started-node/
 
